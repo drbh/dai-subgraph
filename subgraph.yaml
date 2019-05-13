@@ -1,0 +1,41 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: mainnet
+    source:
+      address: "0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.1
+      language: wasm/assemblyscript
+      entities:
+        - Mint
+        - Burn
+        - LogSetAuthority
+        - LogSetOwner
+        - LogNote
+        - Approval
+        - Transfer
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: Mint(address,uint256)
+          handler: handleMint
+        - event: Burn(address,uint256)
+          handler: handleBurn
+        - event: LogSetAuthority(address)
+          handler: handleLogSetAuthority
+        - event: LogSetOwner(address)
+          handler: handleLogSetOwner
+        - event: LogNote(bytes4,address,bytes32,bytes32,uint256,bytes)
+          handler: handleLogNote
+        - event: Approval(address,address,uint256)
+          handler: handleApproval
+        - event: Transfer(address,address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
