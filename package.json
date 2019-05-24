@@ -1,16 +1,16 @@
 {
-  "name": "dai-subgraph",
+  "name": "dai",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ drbh/dai-subgraph",
-    "create-local": "graph create --node http://localhost:8020/ drbh/dai-subgraph",
-    "remove-local": "graph remove --node http://localhost:8020/ drbh/dai-subgraph",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 drbh/dai-subgraph"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ drbh/dai",
+    "create-local": "graph create --node http://localhost:8020/ drbh/dai",
+    "remove-local": "graph remove --node http://localhost:8020/ drbh/dai",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 drbh/dai"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.10.0",
-    "@graphprotocol/graph-ts": "0.6.0"
+    "@graphprotocol/graph-ts": "0.10.0"
   }
 }
